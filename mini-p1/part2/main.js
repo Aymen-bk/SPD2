@@ -1,4 +1,4 @@
-let quizData = []; // Store fetched questions
+let quizData = []; 
 let counter = 0;
 let score = 0;
 let sec = 15;
@@ -17,20 +17,20 @@ function fetchQuestions() {
     fetch(quizLink)
         .then(response => response.json())
         .then(data => {
-            quizData = data.questions; // Store fetched questions
-            generateQuiz(); // Create the quiz dynamically
+            quizData = data.questions;
+            generateQuiz(); 
         })
         .catch(error => console.error("Error fetching quiz:", error));
 }
 
 function generateQuiz() {
     let contentDiv = document.querySelector(".content");
-    contentDiv.innerHTML = ''; // Clear previous content
+    contentDiv.innerHTML = ''; 
 
     quizData.forEach((q, index) => {
         let questionDiv = document.createElement("div");
         questionDiv.classList.add("containers");
-        if (index !== 0) questionDiv.hidden = true; // Hide all except first
+        if (index !== 0) questionDiv.hidden = true; 
 
         let questionText = document.createElement("p");
         questionText.classList.add("questions");
@@ -55,8 +55,8 @@ function generateQuiz() {
         contentDiv.appendChild(questionDiv);
     });
 
-    document.getElementById("api-form").hidden = true; // Hide API form
-    startButton.removeAttribute("hidden"); // Show "START" button
+    document.getElementById("api-form").hidden = true;
+    startButton.removeAttribute("hidden");
 }
 
 
