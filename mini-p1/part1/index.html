@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form">
+        <form class="form">
+            <div class="content">
+                <div class="header">
+                    <h1 class="title">QCM Sur La Géographie</h1>
+                    <h3 class="score">Score :</h3>
+                </div>
+                
+                <button type="button" class="start" onclick="start()" style="padding:5px; border-radius: 10px; background-color: red; margin: 10px; cursor:pointer;">START</button>
+
+                <br>
+
+                <!-- Question 1 -->
+                <div class="containers" hidden>
+                    <p class="questions">La capitale de la France est :</p>
+                    <input type="checkbox" name="q1" value="false" class="inputs"><label>Berlin</label>
+                    <input type="checkbox" name="q1" value="false" class="inputs"><label>Madrid</label>
+                    <input type="checkbox" name="q1" value="true" class="inputs"><label>Paris</label>
+                    <input type="checkbox" name="q1" value="false" class="inputs"><label>Rome</label>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="containers" hidden>
+                    <p class="questions">La capitale de l'Allemagne est :</p>
+                    <input type="checkbox" name="q2" value="true" class="inputs"><label>Berlin</label>
+                    <input type="checkbox" name="q2" value="false" class="inputs"><label>Munich</label>
+                    <input type="checkbox" name="q2" value="false" class="inputs"><label>Hambourg</label>
+                    <input type="checkbox" name="q2" value="false" class="inputs"><label>Francfort</label>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="containers" hidden>
+                    <p class="questions">La capitale de l'Espagne est :</p>
+                    <input type="checkbox" name="q3" value="false" class="inputs"><label>Lisbonne</label>
+                    <input type="checkbox" name="q3" value="true" class="inputs"><label>Madrid</label>
+                    <input type="checkbox" name="q3" value="false" class="inputs"><label>Barcelone</label>
+                    <input type="checkbox" name="q3" value="false" class="inputs"><label>Valence</label>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="containers" hidden>
+                    <p class="questions">La capitale de l'Italie est :</p>
+                    <input type="checkbox" name="q4" value="false" class="inputs"><label>Venise</label>
+                    <input type="checkbox" name="q4" value="false" class="inputs"><label>Milan</label>
+                    <input type="checkbox" name="q4" value="true" class="inputs"><label>Rome</label>
+                    <input type="checkbox" name="q4" value="false" class="inputs"><label>Naples</label>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="containers" hidden>
+                    <p class="questions">La capitale du Japon est :</p>
+                    <input type="checkbox" name="q5" value="false" class="inputs"><label>Osaka</label>
+                    <input type="checkbox" name="q5" value="false" class="inputs"><label>Kyoto</label>
+                    <input type="checkbox" name="q5" value="true" class="inputs"><label>Tokyo</label>
+                    <input type="checkbox" name="q5" value="false" class="inputs"><label>Sapporo</label>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
