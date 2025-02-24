@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Manipulation de vue</title>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+<div id="monapp">
+	<button @click=cl>{{titre}}</button>
+	<br>
+		<button @click=add>++</button>
+		<span> {{compteur}} </span>
+		<button @click=reduce>--</button>
+		<br><br>
+		<input type="text" v-model="userInput" @input="checksp" placeholder="Saisissez une chaîne sans espaces">
+		<p v-if="showWarning" style="color: red;">Veuillez ne pas utiliser d'espaces.</p>
+
+
+</div>
+
+
+<script>
+	const appli = {
+		data () {
+				return {
+					titre : "Clickez moi!" ,
+					compteur : 0,userInput: '',
+					showWarning: false
+			}
+			},
+		methods : {
+			cl()
+			{
+				this.titre = "Clické!"
+			},
+			add()
+			{
+				this.compteur ++
+			},
+			reduce()
+			{
+				this.compteur --
+			},
+			checksp()
+			{this.showWarning = this.userInput.includes(' ');}
+
+		}
+	};
+	
+Vue.createApp(appli).mount("#monapp");
+</script>
+
+</body>
+</html>

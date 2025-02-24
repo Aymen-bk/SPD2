@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Manipulation de vue2</title>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+
+<div id="monapp">
+	<li>Couleur de la police:</li>
+	Rouge<input type="radio" @click=red>
+	Bleu<input type="radio" @click=blu>
+	<li>Afficher/cacher le paragraphe?</li> <input type="checkbox" @click=hide >
+	<br>
+	<span :style="{ color: textColor, display: isVisible ? 'block' : 'none' }">{{ parag }}</span>
+</div>
+
+<script>
+	const appli = {
+		data () {
+			return {
+				parag: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima doloribus labore rem minus temporibus ea numquam animi, quidem aliquam iste.",
+				textColor: 'black',
+				isVisible: true    
+			};
+			},
+		methods : 
+		{
+			red()
+			{
+				this.textColor = "red"
+			},
+			blu()
+			{
+				this.textColor = "blue"
+			},
+			hide()
+			{
+				this.isVisible= !this.isVisible //on inverse la visibilité
+			},
+		}
+	};
+	
+Vue.createApp(appli).mount("#monapp");
+</script>
+
+</body>
+</html>

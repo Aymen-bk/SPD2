@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To-Do List</title>
+<script src="https://unpkg.com/vue@latest"></script>
+<style>
+.task {
+padding: 1rem;
+margin: 1rem 0;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+.completed {
+text-decoration: line-through;
+color: gray;
+}
+.task_num
+{
+    padding: 20px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+<div id="app">
+<fieldset>
+<legend>Filtre</legend>
+<input type="text" v-model="searchTitle" placeholder="Rechercher une tâche...">
+<label>
+Afficher uniquement complétées
+<input type="checkbox" v-model="showCompleted">
+</label>
+</fieldset>
+<div class="task_num">
+    Number of Tasks = {{task_count}}
+</div>
+<div class="task" v-for="t in filteredTasks" :key="t.id" :class="{completed: t.completed}">
+<h3>{{ t.title }}</h3>
+<p>{{ t.description }}</p>
+<label>
+Terminé
+<input type="checkbox" v-model="t.completed">
+</label>
+</div>
+</div>
+<script>
+const app = Vue.createApp({
+data() {
+return {
+searchTitle: '',
+showCompleted: false,
+taskList: [
+{
+"id": 1,
+"title": "Faire les courses",
+"description": "Acheter des légumes et du lait.",
+"completed": false
+},
+{
+"id": 2,
+"title": "Faire du sport",
+"description": "Courir pendant 30 minutes.",
+"completed": true
+},
+{
+"id": 3,
+"title": "Réviser pour l'examen",
+"description": "Relire le chapitre 5 du manuel.",
+"completed": false
+},
+{
+"id": 2,
+"title": "Submit c++",
+"description": "Pusher les files c++ dans github.",
+"completed": false
+},
+{
+"id": 3,
+"title": "Submit TP",
+"description": "Rendre le TP de js.",
+"completed": false
+}
+]
+};
+},
+computed: {
+filteredTasks() {
+return this.taskList.filter(t =>(this.showCompleted ? t.completed : true) && (t.title.toLowerCase().includes(this.searchTitle.toLowerCase()) || this.searchTitle === ''));
+},
+task_count()
+{
+    return this.taskList.length
+}
+}
+});
+app.mount('#app');
+</script>
+</body>
+
+</html>
