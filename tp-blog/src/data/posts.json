@@ -1,0 +1,35 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Getting Started with Vue.js",
+      "body": "Vue.js is a progressive JavaScript framework that makes building user interfaces a breeze. It provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be they simple or complex. Vue.js is designed from the ground up to be incrementally adoptable.\n\nOne of the best things about Vue is its gentle learning curve. If you know HTML, CSS, and JavaScript, you can start building with Vue in no time!",
+      "tags": [
+        "vue",
+        "javascript",
+        "frontend"
+      ],
+      "createdAt": "2024-03-23T12:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "Understanding Vue Components",
+      "body": "Components are one of the most powerful features of Vue.js. They help you build reusable pieces of UI that contain their own state, markup, and style. Components are the building blocks of Vue applications.\n\nA Vue component can be as simple as a button or as complex as an entire page. The key is to keep components focused on a single responsibility and make them as reusable as possible.",
+      "tags": [
+        "vue",
+        "components"
+      ],
+      "createdAt": "2024-03-23T13:00:00.000Z"
+    },
+    {
+      "title": "MyBlog",
+      "body": "This is a test blog",
+      "tags": [
+        "test",
+        "personal"
+      ],
+      "createdAt": "2025-03-23T16:43:54.366Z",
+      "id": 3
+    }
+  ]
+}
